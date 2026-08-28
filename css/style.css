@@ -250,15 +250,43 @@ a { color: inherit; text-decoration: none; }
 .card p { font-size: 19px; color: var(--ink-soft); line-height: 1.7; }
 
 /* ---------- 사업영역: 장성아스콘 제공 자료 사진 ---------- */
+.pavement-title {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.pavement-block:first-of-type .pavement-title,
+h3.pavement-title:first-of-type { margin-top: 8px; }
 .pavement-figure {
-  margin-top: 40px;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: 0 12px 32px rgba(26,26,26,.1);
 }
-.pavement-figure + .pavement-figure { margin-top: 24px; }
 .pavement-figure img { width: 100%; height: auto; display: block; }
+
+.pavement-block { display: flex; gap: 32px; align-items: stretch; }
+.pavement-block .pavement-figure { flex: 1 1 55%; margin: 0; }
+.pavement-table { flex: 1 1 45%; display: flex; flex-direction: column; gap: 10px; }
+.pavement-row {
+  background: var(--ink);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+.pavement-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.pavement-name em { display: block; font-style: normal; font-weight: 500; font-size: 13px; color: rgba(255,255,255,.55); margin-top: 2px; }
+.pavement-desc { color: rgba(255,255,255,.82); font-size: 16px; line-height: 1.6; }
+
+@media (max-width: 860px) {
+  .pavement-block { flex-direction: column; }
+}
 
 /* ---------- People values ---------- */
 .section-people { background: var(--bg); }
