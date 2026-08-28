@@ -11,8 +11,9 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
-@media (max-width: 640px) { html { scroll-snap-type: none; } }
+/* 스크롤 스냅 속도는 CSS가 아니라 js/script.js 의 DURATION 값으로 제어됨(PC 전용) */
+html { scroll-snap-type: none; }
+@media (max-width: 640px) { html { scroll-behavior: smooth; } }
 
 body {
   font-family: "Gowun Dodum", "Pretendard Variable", Pretendard, -apple-system, sans-serif;
