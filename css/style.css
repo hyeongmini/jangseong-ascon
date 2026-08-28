@@ -169,13 +169,31 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 .preview-content {
+  position: relative;
   flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 64px 72px;
   background: var(--card-bg);
+  overflow: hidden;
 }
+.preview-content::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  z-index: 0;
+  width: 120px;
+  max-width: 30%;
+  background: linear-gradient(90deg, rgba(26,26,26,.14) 0%, rgba(26,26,26,0) 100%);
+  pointer-events: none;
+}
+.preview-section.reverse .preview-content::before {
+  left: auto;
+  right: 0;
+  background: linear-gradient(270deg, rgba(26,26,26,.14) 0%, rgba(26,26,26,0) 100%);
+}
+.preview-content h2, .preview-content p, .preview-content a { position: relative; z-index: 1; }
 .preview-eyebrow { font-size: 14px; font-weight: 700; letter-spacing: 0.12em; color: var(--accent-dark); margin-bottom: 14px; }
 .preview-content h2 { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 18px; }
 .preview-content p { font-size: 16px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 28px; max-width: 420px; }
