@@ -355,6 +355,27 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   .pavement-visual { flex: none; height: 220px; flex-direction: row; }
 }
 
+/* 제품 사진 카드 (자재 시편/제품 사진 + 설명) */
+.product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+.product-card img { width: 120px; height: 120px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
+.product-info h4 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+.product-info h4 em { display: block; font-style: normal; font-weight: 500; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+.product-info p { font-size: 15px; color: var(--ink-soft); line-height: 1.55; }
+
+@media (max-width: 640px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .product-card img { width: 88px; height: 88px; }
+}
+
 /* ---------- People values ---------- */
 .section-people { background: var(--bg); }
 .value-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
